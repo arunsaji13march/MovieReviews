@@ -1,0 +1,16 @@
+
+<div class="container">
+    <h2>Add Review</h2>
+    <form (submit)="submitReview()">
+      <div class="form-group">
+        <label for="rating">Rating (1 to 10):</label>
+        <input type="number" class="form-control" id="rating" name="rating" min="1" max="10" required [(ngModel)]="rating">
+      </div>
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" id="comment" name="comment" rows="5" required [(ngModel)]="comment"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Review</button>
+    </form>
+  </div>
+  

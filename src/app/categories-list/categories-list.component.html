@@ -1,0 +1,25 @@
+<div class="container mt-2">
+    <button class="btn btn-outline-dark rounded-pill m-1 ms-2" routerLink="/home" [ngClass]="{ 'active': selectedCategory === 'All' }">All</button>
+    <button class="btn btn-outline-dark rounded-pill ms-2" (click)="getBooksByCategory('Action')" [ngClass]="{ 'active': selectedCategory === 'Action' }">Action</button>
+
+    <button class="btn btn-outline-dark rounded-pill ms-2" (click)="getBooksByCategory('Drama')" [ngClass]="{ 'active': selectedCategory === 'Drama' }">Drama</button>
+
+    <button class="btn btn-outline-dark rounded-pill ms-2" (click)="getBooksByCategory('Fantasy')" [ngClass]="{ 'active': selectedCategory === 'Fantasy' }">Fantasy </button>
+
+    <button class="btn btn-outline-dark rounded-pill ms-2" (click)="getBooksByCategory('Horror')" [ngClass]="{ 'active': selectedCategory === 'Horror' }">Horror</button>
+
+    <button class="btn btn-outline-dark rounded-pill ms-2" (click)="getBooksByCategory('Mystery')" [ngClass]="{ 'active': selectedCategory === 'Mystery' }">Mystery</button>
+
+    <button class="btn btn-outline-dark rounded-pill ms-2" (click)="getBooksByCategory('Romance')" [ngClass]="{ 'active': selectedCategory === 'Romance' }">Romance</button>
+
+    <button class="btn btn-outline-dark rounded-pill ms-2" (click)="getBooksByCategory('Thriller')" [ngClass]="{ 'active': selectedCategory === 'Thriller' }">Thriller</button>
+
+    <button class="btn btn-outline-dark rounded-pill ms-2" (click)="getBooksByCategory('Comedy')" [ngClass]="{ 'active': selectedCategory === 'Comedy' }">Comedy</button>
+    
+    <button class="btn btn-outline-dark rounded-pill ms-2" (click)="getBooksByCategory('Sports')" [ngClass]="{ 'active': selectedCategory === 'Sports' }">Sports</button>
+    
+    
+    
+    
+  
+  </div>

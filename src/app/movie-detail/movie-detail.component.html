@@ -1,0 +1,80 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 text-center ">
+        <img src={{movies.image}} class="img-fluid book-image" alt="Book Image">
+       
+      </div>
+      <div class="col-md-6 bg-dark  pb-2    ">
+        <div class="book-details">
+          <h2 class="book-name">{{movies.title}}</h2>
+          <p class="book-author"><strong>Description: </strong> :{{movies.description}}</p>
+          <p class="book-price"><strong>Release Date: </strong> {{movies.releaseDate}}</p>
+          <p class="book-language"><strong>Genre: </strong> {{movies.genres}}</p>
+          <p class="book-condition"><strong>Cast: </strong> {{movies.cast}}</p>
+          <div *ngIf="averageRating !== undefined" class="mb-3">
+            <p class="mb-1"><strong>Average Rating: </strong>{{ averageRating | number: '1.1-1' }}/10</p>
+              
+          </div>
+        
+          <!-- <div class="container d-flex justify-content-center mt-5">
+            <a [routerLink]="['/orderdelivery']" [queryParams]="{ bookId: bookId }" class="btn btn-primary px-3">Buy</a>
+            <button  class="btn btn-outline-dark mx-3 px-3 "><i class="fa-solid fa-cart-shopping" (click)="addToCart(books)"></i></button>
+        
+          </div>   -->
+        </div>
+     
+        <button type="button" class="btn btn-primary me-2"><i class="fa-regular fa-heart fa-lg me-3"></i>Watchlist</button>
+        <a type="button" class="btn btn-secondary" href={{movies.trailer}} target="_blank">Watch Trailer</a>
+       
+      </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mt-3">
+        <button class="btn btn-dark btn-lg" (click)="goToAddRating()">Rate the Movie</button>
+     
+
+        
+    </div>
+
+    <div class="container video-container">
+       <iframe  src="https://www.youtube.com/embed/SqVfCyfCJqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+
+<div class="container">
+    <div class="container mt-4">
+        <h2>{{ movies?.title }}</h2>
+        <p>{{ movies?.description }}</p>
+        <!-- Other movie details... -->
+      
+        <!-- Show movie average rating -->
+        <div *ngIf="averageRating !== undefined" class="mb-3">
+          <p class="mb-1"><strong>Average Rating: </strong>{{ averageRating | number: '1.1-1' }}/10</p>
+            
+        </div>
+      
+        <!-- Show reviews -->
+        <div *ngIf="reviews.length > 0">
+          <h3>Reviews</h3>
+          <div class="reviews ">
+            <div *ngFor="let review of reviews" class="review bg-dark">
+              <div class="review-header">
+                <div class="user-avatar">User</div>
+                <div class="user-info">
+                  <p>User ID: {{ review.userId }}</p>
+                  <p>Rating: {{ review.rating }}/10</p>
+                  <p class="review-timestamp">{{ review.timestamp | date: 'medium' }}</p>
+                </div>
+              </div>
+
+              <p class="review-comment"> <strong>Comment: </strong>{{ review.comment }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</div>
+
+
+
+
+<router-outlet></router-outlet>
