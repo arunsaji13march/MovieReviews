@@ -30,7 +30,23 @@ export class MovieService {
     return this.httpClient.get<Movies>("http://localhost:8085/movies/v1/getMovieById",{params})
 
   }
- 
+
+  // getCategoryMovies(currentPage: number, itemsPerPage: number, genre:string): Observable<any> {
+  //   const params = new HttpParams()
+  //     .set('page', currentPage)
+  //     .set('size', itemsPerPage)
+  //     .set("genre",genre)
+
+  //     console.log(genre)
+  //   return this.httpClient.get<any>("http://localhost:8085/movies/v1/genre", {params});
+  // }
+  getMoviesByGenre(genre: string, page: number, size: number): Observable<any> {
+    const params = new HttpParams()
+      .set('page', page)
+      .set('size', size);
+
+    return this.httpClient.get<any>(`http://localhost:8085/movies/v1/genre/${genre}`, { params });
+  }
 
   }
   

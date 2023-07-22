@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-categories-list',
@@ -14,15 +14,11 @@ export class CategoriesListComponent {
 
 getBooksByCategory(category: string) {
   this.selectedCategory = category;
-  // Perform additional actions for fetching books by the selected category
+ 
   this.router.navigate(["/categoryView",this.selectedCategory])
 }
 
 
-  getAll(){
-    this.router.navigate(['/home'])
-
-}
-
+// 
 
 }

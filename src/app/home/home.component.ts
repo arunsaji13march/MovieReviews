@@ -13,7 +13,7 @@
   export class HomeComponent implements OnInit {
 
     currentPage = 0;
-    itemsPerPage = 3;
+    itemsPerPage = 8;
     totalMoviesCount = 0;
     movies: any[] = [];
 
